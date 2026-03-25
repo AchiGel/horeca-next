@@ -22,7 +22,7 @@ export default function Navigation() {
   }, [isOpen]);
 
   return (
-    <nav className="relative p-4">
+    <nav className="relative p-4 flex items-center">
       <BurgerMenu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
       {isOpen && (

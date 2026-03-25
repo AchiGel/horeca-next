@@ -24,14 +24,14 @@ export default function Header() {
               height={48}
               loading="eager"
             />
-            <span className="text-2xl">Horeca Georgia</span>
+            <span className="text-2xl hidden md:block">Horeca Georgia</span>
           </div>
         </Link>
         <div className="flex gap-4">
           <Navigation />
           <button
             onClick={() => setTheme(dark ? "light" : "dark")}
-            className="text-3xl"
+            className="cursor-pointer text-3xl"
             aria-label="Toggle Theme"
           >
             {dark ? <MdLightMode /> : <MdNightlight />}

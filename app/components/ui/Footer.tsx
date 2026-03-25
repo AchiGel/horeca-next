@@ -12,7 +12,7 @@ export default function Footer() {
                 {footerData.map((item) => (
                   <a
                     key={item.id}
-                    href="https://www.facebook.com/hrcgeo/"
+                    href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-blue-500 transition-colors"
