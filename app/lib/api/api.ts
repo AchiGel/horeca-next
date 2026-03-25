@@ -4,7 +4,9 @@ const BASE_URL = process.env.NEXT_BASE_URL;
 
 export const getAllArticles = async (): Promise<ArticleType[]> => {
   try {
-    const response = await fetch(`${BASE_URL}/articles`);
+    const response = await fetch(`${BASE_URL}/articles`, {
+      next: { revalidate: 1000 * 60 * 5 },
+    });
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
@@ -20,7 +22,9 @@ export const getArticlesByCategory = async (
   category: string,
 ): Promise<ArticleType[]> => {
   try {
-    const response = await fetch(`${BASE_URL}/articles`);
+    const response = await fetch(`${BASE_URL}/articles`, {
+      next: { revalidate: 1000 * 60 * 5 },
+    });
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
@@ -39,7 +43,9 @@ export const getArticlesByCategory = async (
 
 export const getSingleArticle = async (id: string): Promise<ArticleType> => {
   try {
-    const response = await fetch(`${`${BASE_URL}/articles`}/${id}`);
+    const response = await fetch(`${`${BASE_URL}/articles`}/${id}`, {
+      next: { revalidate: 1000 * 60 * 5 },
+    });
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
