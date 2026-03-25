@@ -1,6 +1,6 @@
 import { getAllArticles } from "./lib/api/api";
 import Newest from "./components/ui/Newest";
-import Posts from "./components/ui/Posts";
+import Articles from "./components/ui/Articles";
 import Title from "./components/ui/Title";
 
 export default async function Home() {
@@ -17,7 +17,7 @@ export default async function Home() {
       {data && (
         <>
           <Newest newest={data[data.length - 1]} />
-          <Posts posts={data} />
+          <Articles articles={data} />
         </>
       )}
     </div>
