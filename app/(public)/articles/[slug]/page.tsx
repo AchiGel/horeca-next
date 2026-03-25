@@ -3,12 +3,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const singleArticle = await getSingleArticle(id);
+  const { slug } = await params;
+  const singleArticle = await getSingleArticle(slug);
 
   return {
     title: singleArticle.title,
@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const { id } = await params;
-  const singleArticle = await getSingleArticle(id);
+  const { slug } = await params;
+  const singleArticle = await getSingleArticle(slug);
 
   return (
     <div>

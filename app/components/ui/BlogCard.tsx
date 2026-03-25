@@ -7,7 +7,7 @@ export default function BlogCard({ article }: { article: ArticleType }) {
   const formatedDate = dateFormat(article.createdAt);
 
   return (
-    <Link href={"/articles/" + article._id}>
+    <Link href={`/articles/${article.slug}`}>
       <div className="flex flex-col items-start gap-3 bg-white dark:bg-slate-600 shadow-lg hover:shadow-xl rounded-lg h-full overflow-hidden transition-shadow">
         {article.imageUrl !== null ? (
           <Image

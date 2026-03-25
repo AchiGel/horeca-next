@@ -41,9 +41,9 @@ export const getArticlesByCategory = async (
   }
 };
 
-export const getSingleArticle = async (id: string): Promise<ArticleType> => {
+export const getSingleArticle = async (slug: string): Promise<ArticleType> => {
   try {
-    const response = await fetch(`${`${BASE_URL}/articles`}/${id}`, {
+    const response = await fetch(`${BASE_URL}/articles/slug/${slug}`, {
       next: { revalidate: 1000 * 60 * 5 },
     });
     if (!response.ok) {
@@ -52,7 +52,7 @@ export const getSingleArticle = async (id: string): Promise<ArticleType> => {
     return await response.json();
   } catch (error) {
     throw new Error(
-      `Failed to fetch article with id ${id}: ${(error as Error).message}`,
+      `Failed to fetch article with slug ${slug}: ${(error as Error).message}`,
     );
   }
 };

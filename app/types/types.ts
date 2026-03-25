@@ -4,6 +4,7 @@ export interface PageDescription {
 }
 
 export interface ArticleType {
+  slug: string;
   body: string[];
   categories: string[];
   createdAt: string;
