@@ -5,7 +5,8 @@ const BASE_URL = process.env.NEXT_BASE_URL;
 export const getAllArticles = async (): Promise<ArticleType[]> => {
   try {
     const response = await fetch(`${BASE_URL}/articles`, {
-      next: { revalidate: 1000 * 60 * 5 },
+      // next: { revalidate: 1000 * 60 * 5 },
+      cache: "no-store",
     });
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
