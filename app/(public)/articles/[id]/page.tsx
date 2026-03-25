@@ -1,8 +1,32 @@
 import { getSingleArticle } from "@/app/lib/api/api";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const singleArticle = await getSingleArticle(id);
+
+  return {
+    title: singleArticle.title,
+    description: singleArticle.description,
+
+    openGraph: {
+      title: singleArticle.title,
+      description: singleArticle.description,
+      images: [singleArticle.imageUrl ?? "/no-image-available-icon-vector.jpg"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: singleArticle.title,
+      description: singleArticle.description,
+      images: [singleArticle.imageUrl ?? "/no-image-available-icon-vector.jpg"],
+    },
+  };
 }
 
 export default async function Page({ params }: Props) {

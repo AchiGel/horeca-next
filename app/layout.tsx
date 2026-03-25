@@ -6,8 +6,44 @@ import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 
 export const metadata: Metadata = {
-  title: "Horeca Georgia",
-  description: "Your blog description here",
+  title: {
+    default: "ჰორეკა საქართველო | Horeca Georgia",
+    template: "%s | Horeca Georgia",
+  },
+  description: "ისტორია, აქტუალური ამბები, ინოვაციები და ტენდენციები",
+  metadataBase: new URL("https://horecageorgia.ge"),
+
+  icons: {
+    icon: [
+      { url: "/Horeca_logo.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  openGraph: {
+    title: "Horeca Georgia",
+    description: "ისტორია, აქტუალური ამბები, ინოვაციები და ტენდენციები",
+    url: "https://horecageorgia.ge",
+    siteName: "Horeca Georgia",
+    images: [
+      {
+        url: "/Horeca_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Horeca Georgia",
+      },
+    ],
+    locale: "ka_GE",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Horeca Georgia",
+    description: "ისტორია, აქტუალური ამბები, ინოვაციები და ტენდენციები",
+    images: ["/Horeca_logo.png"],
+  },
 };
 
 export default function RootLayout({
