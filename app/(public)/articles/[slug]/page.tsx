@@ -33,8 +33,6 @@ export default async function Page({ params }: Props) {
   const { slug } = await params;
   const singleArticle = await getSingleArticle(slug);
 
-  console.log(singleArticle);
-
   return (
     <div>
       <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-3xl">

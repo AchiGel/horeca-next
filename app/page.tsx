@@ -6,8 +6,6 @@ import Title from "./components/ui/Title";
 export default async function Home() {
   const data = await getAllArticles();
 
-  console.log(data);
-
   return (
     <div className="flex flex-col items-center">
       <Title
