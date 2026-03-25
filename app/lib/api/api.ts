@@ -1,4 +1,4 @@
-import { ArticleType } from "../types/types";
+import { ArticleType } from "../../types/types";
 
 const BASE_URL = process.env.NEXT_BASE_URL;
 

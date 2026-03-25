@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import BurgerMenu from "./BurgerMenu";
+import { links } from "../../constants/links";
 import NavigationLink from "./NavigationLink";
-import { links } from "../constants/links";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

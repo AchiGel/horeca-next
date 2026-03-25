@@ -1,4 +1,4 @@
-import { ArticleType } from "../types/types";
+import { ArticleType } from "../../types/types";
 import BlogCard from "./BlogCard";
 
 export default function Posts({ posts }: { posts: ArticleType[] }) {

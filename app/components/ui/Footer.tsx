@@ -1,4 +1,4 @@
-import { footerData } from "../constants/footerData";
+import { footerData } from "@/app/constants/footerData";
 
 export default function Footer() {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArticleType } from "../types/types";
-import { dateFormat } from "../utils/dateFormat";
 import Image from "next/image";
+import { dateFormat } from "@/app/lib/utils/dateFormat";
+import { ArticleType } from "@/app/types/types";
 
 export default function Newest({ newest }: { newest: ArticleType }) {
   const formatedDate = dateFormat(newest.createdAt);

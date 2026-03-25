@@ -1,9 +1,9 @@
-import "@/app/globals.css";
+import "./styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/ui/Header";
+import Footer from "./components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Horeca Georgia",

@@ -1,11 +1,11 @@
-import { getAllArticles } from "./api/api";
-import Newest from "./components/Newest";
-import Posts from "./components/Posts";
-import Title from "./components/Title";
+import { getAllArticles } from "./lib/api/api";
+import Newest from "./components/ui/Newest";
+import Posts from "./components/ui/Posts";
+import Title from "./components/ui/Title";
 
 export default async function Home() {
   const data = await getAllArticles();
-  console.log(data);
+
   return (
     <div className="flex flex-col items-center">
       <Title

@@ -1,4 +1,4 @@
-import { getSingleArticle } from "@/app/api/api";
+import { getSingleArticle } from "@/app/lib/api/api";
 import Image from "next/image";
 
 interface Props {

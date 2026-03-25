@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { MdLightMode, MdNightlight } from "react-icons/md";
-import Navigation from "./Navigation";
 import logo from "@/public/Horeca_logo.png";
+import Navigation from "./Navigation";
 
 export default function Header() {
   const { resolvedTheme, setTheme } = useTheme();

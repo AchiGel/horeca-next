@@ -1,4 +1,4 @@
-import { PageDescription } from "../types/types";
+import { PageDescription } from "@/app/types/types";
 
 export default function Title({ page }: { page: PageDescription }) {
   return (

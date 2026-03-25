@@ -1,7 +1,7 @@
 "use client";
 
+import { BurgerMenuProps } from "@/app/types/types";
 import { FiMenu, FiX } from "react-icons/fi";
-import { BurgerMenuProps } from "../types/types";
 
 export default function BurgerMenu({ isOpen, toggle }: BurgerMenuProps) {
   return (

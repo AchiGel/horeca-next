@@ -1,8 +1,8 @@
 "use client";
 
+import { LinksType } from "@/app/types/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LinksType } from "../types/types";
 
 export default function NavigationLink({
   link,
