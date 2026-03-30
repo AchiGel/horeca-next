@@ -1,4 +1,5 @@
 import { footerData } from "@/app/constants/footerData";
+import TopGeCounter from "./TopGeCounter";
 
 export default function Footer() {
   return (
@@ -37,6 +38,7 @@ export default function Footer() {
               Archil Gelashvili
             </a>
           </h4>
+          <TopGeCounter />
         </div>
       </div>
     </footer>
