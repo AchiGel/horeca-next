@@ -12,3 +12,155 @@
   font-family: "BPG Nino Mtavruli Bold";
   src: url(/bpg_nino_mtavruli_bold.ttf);
 }
+
+.loader-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+.loader-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+.cup {
+  position: relative;
+  margin-bottom: 28px;
+}
+.steam {
+  position: absolute;
+  top: -28px;
+  display: flex;
+  gap: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.steam span {
+  display: block;
+  width: 5px;
+  height: 20px;
+  border-radius: 10px;
+  background: #c9a87c;
+  opacity: 0;
+  animation: steam 2s ease-in-out infinite;
+}
+.steam span:nth-child(2) {
+  animation-delay: 0.4s;
+  height: 28px;
+}
+.steam span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+  }
+  30% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scaleX(1.4);
+  }
+}
+.cup-body {
+  width: 64px;
+  height: 56px;
+  background: #e8d5b7;
+  border-radius: 4px 4px 18px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.cup-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: #b5763a;
+  border-radius: 0 0 18px 18px;
+  animation: fill 2.4s ease-in-out infinite;
+}
+@keyframes fill {
+  0%,
+  100% {
+    height: 28px;
+    background: #b5763a;
+  }
+  50% {
+    height: 36px;
+    background: #9c5f28;
+  }
+}
+.cup-rim {
+  width: 70px;
+  height: 6px;
+  background: #d4bfa0;
+  border-radius: 4px;
+  margin: 0 auto;
+  transform: translateX(-3px);
+}
+.cup-handle {
+  position: absolute;
+  right: -18px;
+  top: 10px;
+  width: 18px;
+  height: 30px;
+  border: 5px solid #d4bfa0;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+}
+.cup-saucer {
+  width: 80px;
+  height: 8px;
+  background: #d4bfa0;
+  border-radius: 50%;
+  margin: 4px auto 0;
+}
+.loader-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+.dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c9a87c;
+  animation: bounce 1.4s ease-in-out infinite;
+}
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+  background: #b5763a;
+}
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+  background: #9c5f28;
+}
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
