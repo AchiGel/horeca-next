@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: singleArticle.title,
       description: singleArticle.description,
       url: `https://www.horecageorgia.ge/articles/${slug}`,
+      type: "article",
       images: [
         {
           url: imageUrl,
