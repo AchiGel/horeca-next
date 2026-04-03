@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex flex-col gap-4 mt-50 mb-50">
+    <div className="flex flex-col gap-4 mt-50 mb-50 max-w-70 mx-auto">
       <h2 className="font-bold text-2xl">დაფიქსირდა შეცდომა!</h2>
       {process.env.NODE_ENV === "development" && <p>Digest: {error.digest}</p>}
       <button
