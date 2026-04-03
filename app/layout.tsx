@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Horeca Georgia",
   },
   description: "ისტორია, აქტუალური ამბები, ინოვაციები და ტენდენციები",
-  metadataBase: new URL("https://horecageorgia.ge"),
+  metadataBase: new URL("https://www.horecageorgia.ge"),
 
   icons: {
     icon: [
