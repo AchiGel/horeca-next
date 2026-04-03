@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default async function BusinessAndTechPage() {
   return (
     <CategoryPage
-      category="business_&_tech"
+      category="business-and-tech"
       description="ამბები და სიახლეები მასპინძლობის ბიზნესისა და ტექნოლოგიების შესახებ"
     />
   );
