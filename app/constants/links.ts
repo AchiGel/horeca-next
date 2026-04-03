@@ -1,8 +1,7 @@
 export const links = [
-  { name: "რესტორნები", path: "/restaurants" },
+  { name: "სიახლეები", path: "/news" },
+  { name: "გასტრონომია", path: "/gastronomy" },
   { name: "სასტუმროები", path: "/hotels" },
-  { name: "კაფეები", path: "/cafes" },
-  { name: "ქეითერინგი", path: "/catering" },
-  { name: "მენეჯმენტი", path: "/management" },
-  { name: "ტრენდები", path: "/trends" },
+  { name: "ბიზნესი და ტექნოლოგია", path: "/business_&_Tech" },
+  { name: "ინტერვიუები", path: "/interviews" },
 ];

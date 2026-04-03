@@ -14,11 +14,13 @@ export default async function Home() {
           descr: "ისტორია, აქტუალური ამბები, ინოვაციები და ტენდენციები",
         }}
       />
-      {data && (
+      {data.length > 0 ? (
         <>
           <Newest newest={data[data.length - 1]} />
           <Articles articles={data} />
         </>
+      ) : (
+        <div className="mt-20 mb-20">სტატიები ვერ მოიძებნა!</div>
       )}
     </div>
   );

@@ -57,9 +57,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
 
-          <div className="flex grow justify-center items-center max-w-360 mx-auto w-full">
-            {children}
-          </div>
+          <div className="grow max-w-360 mx-auto w-full">{children}</div>
 
           <Footer />
         </ThemeProvider>
