@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { dateFormat } from "@/app/lib/utils/dateFormat";
 import { ArticleType } from "@/app/types/types";
+import SafeImage from "./SafeImage";
 
 export default function Newest({ newest }: { newest: ArticleType }) {
   const formatedDate = dateFormat(newest.createdAt);
@@ -13,26 +13,7 @@ export default function Newest({ newest }: { newest: ArticleType }) {
       <Link href={`/articles/${newest.slug}`}>
         <div className="flex flex-col items-start bg-white dark:bg-slate-600 shadow-lg hover:shadow-xl rounded-lg max-w-3xl h-full overflow-hidden transition-shadow">
           <div className="w-full h-90">
-            {newest.imageUrl !== null ? (
-              <Image
-                className="w-full object-cover h-full"
-                src={
-                  newest.imageUrl.endsWith(".jpg")
-                    ? newest.imageUrl
-                    : newest.imageUrl + ".jpeg"
-                }
-                alt={newest.title}
-                width={1000}
-                height={1000}
-                loading="eager"
-              />
-            ) : (
-              <Image
-                className="w-full object-cover"
-                src="/no-image-available-icon-vector.jpg"
-                alt="No Image"
-              />
-            )}
+            <SafeImage alt={newest.slug} src={newest.imageUrl} />
           </div>
 
           <div className="flex flex-col gap-4 p-6 pt-2">

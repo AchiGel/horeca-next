@@ -17,7 +17,7 @@ export default function Articles({ articles }: { articles: ArticleType[] }) {
   };
 
   return (
-    <div>
+    <div className="w-full">
       {articles.length === 0 ? (
         <div className="flex flex-col p-8 lg:px-16 lg:py-16 pt-12">
           სტატიები ვერ მოიძებნა!
