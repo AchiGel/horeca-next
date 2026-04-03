@@ -10,7 +10,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const singleArticle = await getSingleArticle(slug);
 
-  const imageUrl = singleArticle.imageUrl ?? "og-logo.png";
+  const imageUrl =
+    singleArticle.imageUrl ?? "https://www.horecageorgia.ge/og-logo.png";
 
   return {
     title: singleArticle.title,
