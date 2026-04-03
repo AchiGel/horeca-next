@@ -1,7 +1,6 @@
 import SafeImage from "@/app/components/ui/SafeImage";
 import { getSingleArticle } from "@/app/lib/api/api";
 import { Metadata } from "next";
-import Image from "next/image";
 
 interface Props {
   params: Promise<{ slug: string }>;
