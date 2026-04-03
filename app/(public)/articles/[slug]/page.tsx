@@ -10,6 +10,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const singleArticle = await getSingleArticle(slug);
 
+  const imageUrl = singleArticle.imageUrl ?? "og-logo.png";
+
   return {
     title: singleArticle.title,
     description: singleArticle.description,
@@ -17,14 +19,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: singleArticle.title,
       description: singleArticle.description,
-      images: [singleArticle.imageUrl ?? "/placeholder.jpg"],
+      url: `https://www.horecageorgia.ge/articles/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: singleArticle.title,
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title: singleArticle.title,
       description: singleArticle.description,
-      images: [singleArticle.imageUrl ?? "/no-image-available-icon-vector.jpg"],
+      images: [imageUrl],
     },
   };
 }
