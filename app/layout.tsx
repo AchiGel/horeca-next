@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Horeca Georgia",
     images: [
       {
-        url: "/og-logo.png",
+        url: "https://i.ibb.co/gL41tY5f/og-logo.png",
         width: 1200,
         height: 630,
         alt: "Horeca Georgia",
