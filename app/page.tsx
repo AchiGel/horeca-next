@@ -16,7 +16,7 @@ export default async function Home() {
       />
       {data.length > 0 ? (
         <>
-          <Newest newest={data[data.length - 1]} />
+          <Newest newest={data[0]} />
           <Articles articles={data} />
         </>
       ) : (
