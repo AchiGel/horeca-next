@@ -58,7 +58,11 @@ export default async function Page({ params }: Props) {
       <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-4xl">
         <h1 className="text-3xl">{singleArticle.title}</h1>
         <div className="w-full h-100">
-          <SafeImage alt={singleArticle.slug} src={singleArticle.imageUrl} />
+          <SafeImage
+            alt={singleArticle.slug}
+            src={singleArticle.imageUrl}
+            className="object-contain"
+          />
         </div>
         <p className="text-xl italic">{singleArticle.description}</p>
         {singleArticle.body.map((p, index) => (
@@ -81,7 +85,7 @@ export default async function Page({ params }: Props) {
                   <SafeImage
                     alt={article.slug}
                     src={article.imageUrl}
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-base font-medium leading-snug group-hover:underline line-clamp-2">
