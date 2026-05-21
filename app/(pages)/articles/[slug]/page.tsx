@@ -61,7 +61,7 @@ export default async function Page({ params }: Props) {
           <SafeImage
             alt={singleArticle.slug}
             src={singleArticle.imageUrl}
-            className="object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
         <p className="text-xl italic">{singleArticle.description}</p>
