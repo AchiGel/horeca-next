@@ -55,7 +55,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-3xl">
+      <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-4xl">
         <h1 className="text-3xl">{singleArticle.title}</h1>
         <div className="w-full h-100">
           <SafeImage alt={singleArticle.slug} src={singleArticle.imageUrl} />
@@ -68,7 +68,7 @@ export default async function Page({ params }: Props) {
 
       {/* Similar Articles Section */}
       {similarArticles.length > 0 && (
-        <section className="mx-auto p-6 md:p-16 max-w-3xl border-t border-gray-200">
+        <section className="mx-auto p-6 md:p-16 max-w-4xl border-t border-gray-200">
           <h2 className="text-2xl font-semibold mb-6">მსგავსი სტატიები</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {similarArticles.map((article) => (
