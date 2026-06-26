@@ -37,7 +37,7 @@ export default function Navigation() {
         </div>
       )}
 
-      <ul className="hidden lg:flex justify-center gap-6 font-medium text-gray-700 dark:text-white text-lg">
+      <ul className="hidden lg:flex justify-center items-center gap-6 font-medium text-gray-700 dark:text-white text-lg">
         {links.map((link) => (
           <li key={link.path}>
             <NavigationLink link={link} setIsOpen={setIsOpen} />
