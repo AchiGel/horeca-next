@@ -40,6 +40,10 @@ function renderParagraph(p: string, key: number) {
     );
   }
 
+  if (p.trim() === "") {
+    return null;
+  }
+
   return (
     <p key={key} className="text-base md:text-lg">
       {p}
