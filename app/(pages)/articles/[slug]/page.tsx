@@ -16,6 +16,14 @@ function renderParagraph(p: string, key: number) {
     );
   }
 
+  if (p.startsWith("h3/")) {
+    return (
+      <h2 key={key} className="text-lg md:text-xl font-semibold mt-4 md:mt-6">
+        {p.slice(3)}
+      </h2>
+    );
+  }
+
   if (p.startsWith("B/")) {
     return (
       <p key={key} className="text-base md:text-lg font-bold">
