@@ -24,7 +24,7 @@ export default function Header() {
               height={48}
               loading="eager"
             />
-            <span className="text-2xl hidden md:block">Horeca Georgia</span>
+            <span className="text-2xl hidden lg:block">Horeca Georgia</span>
           </div>
         </Link>
         <div className="flex gap-4">

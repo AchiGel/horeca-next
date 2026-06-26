@@ -1,10 +1,42 @@
 import SafeImage from "@/app/components/ui/SafeImage";
 import { getSingleArticle, getAllArticles } from "@/app/lib/api/api";
 import { Metadata } from "next";
-import Link from "next/link";
+import SimilarArticlesCarousel from "@/app/components/ui/SimilarArticlesCarousel";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+function renderParagraph(p: string, key: number) {
+  if (p.startsWith("h2/")) {
+    return (
+      <h2 key={key} className="text-xl md:text-2xl font-semibold mt-4 md:mt-6">
+        {p.slice(3)}
+      </h2>
+    );
+  }
+
+  if (p.startsWith("B/")) {
+    return (
+      <p key={key} className="text-base md:text-lg font-bold">
+        {p.slice(2)}
+      </p>
+    );
+  }
+
+  if (p.startsWith("I/")) {
+    return (
+      <p key={key} className="text-base md:text-lg italic">
+        {p.slice(2)}
+      </p>
+    );
+  }
+
+  return (
+    <p key={key} className="text-base md:text-lg">
+      {p}
+    </p>
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -49,14 +81,21 @@ export default async function Page({ params }: Props) {
     getAllArticles(),
   ]);
 
-  const similarArticles = allArticles
-    .filter((a) => a.slug !== slug)
-    .slice(0, 3);
+  const similarArticles = allArticles.filter(
+    (a) =>
+      a.slug !== slug &&
+      a.categories.some((cat) => singleArticle.categories.includes(cat)),
+  );
 
   return (
     <div>
       <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-4xl">
-        <h1 className="text-3xl">{singleArticle.title}</h1>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl">
+          {singleArticle.title}
+        </h1>
+        <p className="text-sm text-gray-500">
+          {singleArticle.minutesRead} წუთის საკითხავი
+        </p>
         <div className="w-full h-100">
           <SafeImage
             alt={singleArticle.slug}
@@ -64,41 +103,17 @@ export default async function Page({ params }: Props) {
             className="w-full h-full object-contain"
           />
         </div>
-        <p className="text-xl italic">{singleArticle.description}</p>
-        {singleArticle.body.map((p, index) => (
-          <p key={index}>{p}</p>
-        ))}
+        <p className="text-lg md:text-xl italic">{singleArticle.description}</p>
+        {singleArticle.body.map((p, index) => renderParagraph(p, index))}
       </div>
 
       {/* Similar Articles Section */}
       {similarArticles.length > 0 && (
         <section className="mx-auto p-6 md:p-16 max-w-4xl border-t border-gray-200">
-          <h2 className="text-2xl font-semibold mb-6">მსგავსი სტატიები</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {similarArticles.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/articles/${article.slug}`}
-                className="group flex flex-col gap-2"
-              >
-                <div className="w-full aspect-video overflow-hidden rounded-lg bg-gray-100">
-                  <SafeImage
-                    alt={article.slug}
-                    src={article.imageUrl}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-base font-medium leading-snug group-hover:underline line-clamp-2">
-                  {article.title}
-                </h3>
-                {article.description && (
-                  <p className="text-sm text-gray-500 line-clamp-2">
-                    {article.description}
-                  </p>
-                )}
-              </Link>
-            ))}
-          </div>
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">
+            მსგავსი სტატიები
+          </h2>
+          <SimilarArticlesCarousel articles={similarArticles} />
         </section>
       )}
     </div>

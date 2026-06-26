@@ -1,6 +1,7 @@
 import { ArticleType } from "../../types/types";
 
-const BASE_URL = process.env.NEXT_BASE_URL;
+// const BASE_URL = process.env.NEXT_BASE_URL;
+const BASE_URL = "https://horeca-backend.vercel.app/api";
 
 export const getAllArticles = async (): Promise<ArticleType[]> => {
   try {
