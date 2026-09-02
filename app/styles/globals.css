@@ -5,12 +5,12 @@
 
 * {
   @apply transition-all duration-100;
-  font-family: "BPG Nino Mtavruli Bold";
+  font-family: "BPG Nino Mtavruli";
 }
 
 @font-face {
-  font-family: "BPG Nino Mtavruli Bold";
-  src: url(/bpg_nino_mtavruli_bold.ttf);
+  font-family: "BPG Nino Mtavruli";
+  src: url(/bpg_nino_mtavruli_normal.otf);
 }
 
 .loader-wrap {
