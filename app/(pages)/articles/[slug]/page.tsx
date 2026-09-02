@@ -14,7 +14,7 @@ function renderParagraph(p: string, key: number) {
   // H2 - მთავარი ქვესათაური
   if (p.startsWith("h2/")) {
     return (
-      <h2 key={key} className="text-xl md:text-2xl font-bold text-slate-900">
+      <h2 key={key} className="text-xl md:text-2xl font-bold">
         {p.slice(3)}
       </h2>
     );
@@ -23,7 +23,7 @@ function renderParagraph(p: string, key: number) {
   // H3 - მეორეხარისხოვანი ქვესათაური
   if (p.startsWith("h3/")) {
     return (
-      <h3 key={key} className="text-lg md:text-xl font-semibold text-slate-800">
+      <h3 key={key} className="text-lg md:text-xl font-semibold">
         {p.slice(3)}
       </h3>
     );
@@ -50,7 +50,7 @@ function renderParagraph(p: string, key: number) {
   // გამუქებული აბზაცი
   if (p.startsWith("b/")) {
     return (
-      <p key={key} className="text-base md:text-lg font-bold text-slate-900">
+      <p key={key} className="text-base md:text-lg font-bold">
         {p.slice(2)}
       </p>
     );
@@ -59,7 +59,7 @@ function renderParagraph(p: string, key: number) {
   // დახრილი ტექსტი / შენიშვნა
   if (p.startsWith("i/")) {
     return (
-      <p key={key} className="text-sm md:text-base italic text-slate-500">
+      <p key={key} className="text-sm md:text-base italic">
         {p.slice(2)}
       </p>
     );
@@ -67,7 +67,7 @@ function renderParagraph(p: string, key: number) {
 
   // სტანდარტული აბზაცი
   return (
-    <p key={key} className="text-base md:text-lg text-slate-700 leading-relaxed">
+    <p key={key} className="text-base md:text-lg leading-relaxed">
       {p}
     </p>
   );
