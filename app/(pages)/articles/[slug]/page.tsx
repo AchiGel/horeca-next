@@ -114,7 +114,7 @@ export default async function Page({ params }: Props) {
             className="w-full h-full object-contain"
           />
         </div>
-        <p className="text-lg md:text-xl italic">{singleArticle.description}</p>
+        <p className="text-lg md:text-xl italic font-bold">{singleArticle.description}</p>
         {singleArticle.body.map((p, index) => renderParagraph(p, index))}
       </div>
 
