@@ -8,6 +8,9 @@ interface Props {
 }
 
 function renderParagraph(p: string, key: number) {
+  const trimmed = p.trim();
+  if (!trimmed) return null;
+
   if (p.startsWith("h2/")) {
     return (
       <h2 key={key} className="text-xl md:text-2xl font-semibold mt-4 md:mt-6">
@@ -18,16 +21,16 @@ function renderParagraph(p: string, key: number) {
 
   if (p.startsWith("h3/")) {
     return (
-      <h2 key={key} className="text-lg md:text-xl font-semibold mt-4 md:mt-6">
+      <h3 key={key} className="text-lg md:text-xl font-semibold mt-4 md:mt-6">
         {p.slice(3)}
-      </h2>
+      </h3>
     );
   }
 
   if (p.startsWith("B/")) {
     return (
       <p key={key} className="text-base md:text-lg font-bold">
-        {p.slice(2)}
+        <strong>{p.slice(2)}</strong>
       </p>
     );
   }
@@ -35,13 +38,9 @@ function renderParagraph(p: string, key: number) {
   if (p.startsWith("I/")) {
     return (
       <p key={key} className="text-base md:text-lg italic">
-        {p.slice(2)}
+        <em>{p.slice(2)}</em>
       </p>
     );
-  }
-
-  if (p.trim() === "") {
-    return null;
   }
 
   return (
