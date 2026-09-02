@@ -14,7 +14,7 @@ function renderParagraph(p: string, key: number) {
   // H2 - მთავარი ქვესათაური
   if (p.startsWith("h2/")) {
     return (
-      <h2 key={key} className="text-xl md:text-2xl font-bold mt-8 mb-3 text-slate-900">
+      <h2 key={key} className="text-xl md:text-2xl font-bold text-slate-900">
         {p.slice(3)}
       </h2>
     );
@@ -23,7 +23,7 @@ function renderParagraph(p: string, key: number) {
   // H3 - მეორეხარისხოვანი ქვესათაური
   if (p.startsWith("h3/")) {
     return (
-      <h3 key={key} className="text-lg md:text-xl font-semibold mt-6 mb-2 text-slate-800">
+      <h3 key={key} className="text-lg md:text-xl font-semibold text-slate-800">
         {p.slice(3)}
       </h3>
     );
@@ -32,7 +32,7 @@ function renderParagraph(p: string, key: number) {
   // ციტატა (Blockquote)
   if (p.startsWith("q/")) {
     return (
-      <blockquote key={key} className="border-l-4 border-indigo-500 pl-4 py-2 my-4 italic text-slate-700 bg-slate-50 rounded-r">
+      <blockquote key={key} className="border-l-4 border-indigo-500 pl-4 py-2 italic text-slate-700 bg-slate-50 rounded-r">
         {p.slice(2)}
       </blockquote>
     );
@@ -41,7 +41,7 @@ function renderParagraph(p: string, key: number) {
   // Callout (მნიშვნელოვანი ჩანართი / რჩევა)
   if (p.startsWith("callout/")) {
     return (
-      <div key={key} className="bg-amber-50 border border-amber-200 text-amber-900 p-4 rounded-lg my-4 font-medium text-sm md:text-base">
+      <div key={key} className="bg-amber-50 border border-amber-200 text-amber-900 p-4 rounded-lg font-medium text-sm md:text-base">
         {p.slice(8)}
       </div>
     );
@@ -50,7 +50,7 @@ function renderParagraph(p: string, key: number) {
   // გამუქებული აბზაცი
   if (p.startsWith("b/")) {
     return (
-      <p key={key} className="text-base md:text-lg font-bold text-slate-900 my-2">
+      <p key={key} className="text-base md:text-lg font-bold text-slate-900">
         {p.slice(2)}
       </p>
     );
@@ -59,7 +59,7 @@ function renderParagraph(p: string, key: number) {
   // დახრილი ტექსტი / შენიშვნა
   if (p.startsWith("i/")) {
     return (
-      <p key={key} className="text-sm md:text-base italic text-slate-500 my-2">
+      <p key={key} className="text-sm md:text-base italic text-slate-500">
         {p.slice(2)}
       </p>
     );
@@ -67,7 +67,7 @@ function renderParagraph(p: string, key: number) {
 
   // სტანდარტული აბზაცი
   return (
-    <p key={key} className="text-base md:text-lg text-slate-700 leading-relaxed my-3">
+    <p key={key} className="text-base md:text-lg text-slate-700 leading-relaxed">
       {p}
     </p>
   );
