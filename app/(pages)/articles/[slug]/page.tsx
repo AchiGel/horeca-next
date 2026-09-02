@@ -11,40 +11,63 @@ function renderParagraph(p: string, key: number) {
   const trimmed = p.trim();
   if (!trimmed) return null;
 
+  // H2 - მთავარი ქვესათაური
   if (p.startsWith("h2/")) {
     return (
-      <h2 key={key} className="text-xl md:text-2xl font-semibold mt-4 md:mt-6">
+      <h2 key={key} className="text-xl md:text-2xl font-bold mt-8 mb-3 text-slate-900">
         {p.slice(3)}
       </h2>
     );
   }
 
+  // H3 - მეორეხარისხოვანი ქვესათაური
   if (p.startsWith("h3/")) {
     return (
-      <h3 key={key} className="text-lg md:text-xl font-semibold mt-4 md:mt-6">
+      <h3 key={key} className="text-lg md:text-xl font-semibold mt-6 mb-2 text-slate-800">
         {p.slice(3)}
       </h3>
     );
   }
 
-  if (p.startsWith("B/")) {
+  // ციტატა (Blockquote)
+  if (p.startsWith("q/")) {
     return (
-      <p key={key} className="text-base md:text-lg font-bold">
-        <strong>{p.slice(2)}</strong>
+      <blockquote key={key} className="border-l-4 border-indigo-500 pl-4 py-2 my-4 italic text-slate-700 bg-slate-50 rounded-r">
+        {p.slice(2)}
+      </blockquote>
+    );
+  }
+
+  // Callout (მნიშვნელოვანი ჩანართი / რჩევა)
+  if (p.startsWith("callout/")) {
+    return (
+      <div key={key} className="bg-amber-50 border border-amber-200 text-amber-900 p-4 rounded-lg my-4 font-medium text-sm md:text-base">
+        {p.slice(8)}
+      </div>
+    );
+  }
+
+  // გამუქებული აბზაცი
+  if (p.startsWith("b/")) {
+    return (
+      <p key={key} className="text-base md:text-lg font-bold text-slate-900 my-2">
+        {p.slice(2)}
       </p>
     );
   }
 
-  if (p.startsWith("I/")) {
+  // დახრილი ტექსტი / შენიშვნა
+  if (p.startsWith("i/")) {
     return (
-      <p key={key} className="text-base md:text-lg italic">
-        <em>{p.slice(2)}</em>
+      <p key={key} className="text-sm md:text-base italic text-slate-500 my-2">
+        {p.slice(2)}
       </p>
     );
   }
 
+  // სტანდარტული აბზაცი
   return (
-    <p key={key} className="text-base md:text-lg">
+    <p key={key} className="text-base md:text-lg text-slate-700 leading-relaxed my-3">
       {p}
     </p>
   );
@@ -101,7 +124,7 @@ export default async function Page({ params }: Props) {
   return (
     <div>
       <div className="flex flex-col gap-4 mx-auto p-6 md:p-16 pt-24 md:pt-32 max-w-4xl">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
           {singleArticle.title}
         </h1>
         <p className="text-sm text-gray-500">
